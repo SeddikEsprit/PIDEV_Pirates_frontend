@@ -1,20 +1,73 @@
-
 <div id="portfolio" class="container-fluid text-center bg-grey">
-  <div >
+  <div>
     <h2>{{localisation.nom}}</h2><br>
     <h4>{{localisation.description}}</h4>
     <div class="row text-center slideanim">
-      <div class="col-sm-4">
+      <div class="2">
         <div class="thumbnail">
-            <p><strong>Localisation</strong></p>
-            <p>Localisation</p>
-
+          <p><strong>Localisation</strong></p>
+          <p>Localisation</p>
         </div>
       </div>
+      <div class="col-sm-4">
+        <div *ngFor="let espece of especes">
+          <div>
+            <h2>{{espece.especeChasse.nomEspece}}</h2><br>
+            <h4>{{espece.especeChasse.descriptionEspece}}</h4>
+            <div class="row text-center slideanim">
+              <div class="col-sm-4">
+                <div class="thumbnail">
+                  <img src="{{espece.especeChasse.photo}}" alt="Paris" width="100" height="50">
+                  <p><strong>Gibier</strong></p>
+                  <p>Gibier</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
     </div>
-    <button class="btn-warning" (click)="update([localisation._id])">update</button>
-    <br>
-    <br>
-    <button class="btn btn-warning" (click)="delete([localisation._id])">delete</button>
   </div>
-</div><br>
+  <button class="btn-warning" (click)="update([localisation._id])">update</button>
+  <br>
+  <br>
+  <button class="btn btn-warning" (click)="delete([localisation._id])">delete</button>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+    <!--    <form #f="ngForm"  (ngSubmit)="addNewEspeces([localisation.nom],f)">-->
+    <!--      <select name="esspece" id="esspece"  >-->
+
+    <!--&lt;!&ndash;      <option value="{{g.nom}}">{{g.nom}}&ndash;&gt;-->
+
+    <!--&lt;!&ndash;      </option>&ndash;&gt;-->
+    <!--        <div *ngFor="let g of gibier">-->
+    <!--          <option value="{{g.nom}}" >{{g.nom}}</option>-->
+
+    <!--        </div>-->
+    <!--      </select>-->
+    <!--      <button class="btn btn-warning" >ajouter une nouvelle espece</button>-->
+    <!--    </form>-->
+
+  </div>
+
+</div>
+<form #f="ngForm" (ngSubmit)="addNewEspeces(f)">
+<!--  <label for="browser">Choose your browser from the list:</label>-->
+  <select class="form-select" aria-label="Default select example" name="espece" #espece="ngModel"  ngModel>
+    <option selected>Open this select menu</option>
+    <option *ngFor="let g of gibier" value="{{g.nomEspece}}">{{g.nomEspece}}</option>
+
+  </select>
+<!--  <input list="browser" name="browser" id="browser" #browser="ngModel" ngModel>-->
+<!--  <datalist >-->
+<!--    <div *ngFor="let g of gibier">-->
+<!--      <option value="{{g.nomEspece}}">-->
+<!--    </div>-->
+<!--  </datalist>-->
+  <button class="btn btn-warning">ajouter une nouvelle espece</button>
+</form>
+

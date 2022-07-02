@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { AddLocalisationComponent } from './add-localisation/add-localisation.component';
 import { UpdateLocalisationComponent } from './update-localisation/update-localisation.component';
 import { DetailLocalisationComponent } from './detail-localisation/detail-localisation.component';
+import { MapLocationComponent } from './map-location/map-location.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { DetailLocalisationComponent } from './detail-localisation/detail-locali
     LocalisationComponent,
     AddLocalisationComponent,
     UpdateLocalisationComponent,
-    DetailLocalisationComponent
+    DetailLocalisationComponent,
+    MapLocationComponent
   ],
   imports: [
     CommonModule,

@@ -23,4 +23,10 @@ export class ServiceLocalisationService {
   updateLocalisation(id:any,localisation:any){
     return this.http.patch('http://localhost:3000/localisationChasse/'+id,localisation)
   }
+  getEspecesByLocation(id:any){
+    return this.http.get('http://localhost:3000/localisationEspece/especes/'+id)
+  }
+  postNewEpeceByLocalisation(localisation:any,espece:any){
+   return this.http.post( 'http://localhost:3000/localisationEspece/'+localisation+'/'+espece,null)
+  }
 }
