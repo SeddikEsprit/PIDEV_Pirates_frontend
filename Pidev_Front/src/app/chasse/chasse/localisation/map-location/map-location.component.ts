@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Loader} from "@googlemaps/js-api-loader";
 import {ViewChild,ElementRef} from "@angular/core";
 import {ServiceLocalisationService} from "../service/service-localisation.service";
 
-import {map} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
+import {compareNumbers} from "@angular/compiler-cli/src/diagnostics/typescript_version";
 
 @Component({
   selector: 'app-map-location',
@@ -12,36 +13,38 @@ import {map} from "rxjs";
 })
 export class MapLocationComponent implements OnInit {
 title="google-maps"
- lat:any
-  lng:any
 markers:any=[]
-private map!: google.maps.Map
+ map!: google.maps.Map
 // document!:any
-  constructor(private serviceLocation:ServiceLocalisationService) { }
+  constructor(private serviceLocation:ServiceLocalisationService,private router:ActivatedRoute) { }
 
   ngOnInit(): void {
+    var  location={
+      lat:Number(this.router.snapshot.params['lat']),
+      lng:Number(this.router.snapshot.params['lng'])
 
-  let loader=new Loader({
+    };
+
+  let  loader=new  Loader({
     apiKey:'AIzaSyCfCuqJE-1P0s6TNVmj7NvFOkoyksvLMVM'
   })
-    loader.load().then(()=>{
-      const location={
-        lat:35.167965,
-        lng:9.167965
-      }
+         loader.load().then(()=>{
+
+      console.log(location)
       // @ts-ignore
-      map=new google.maps.Map(document.getElementById("map"), {
+      this.map=new google.maps.Map(document.getElementById("map"), {
         center: location,
-        zoom: 6
+        zoom:9,
       })
       var marker=new google.maps.Marker({
         position:location,
-        map: this.map,
-        icon:"https://img.icons8.com/nolan/2x/marker.png"
+        map:this.map
       })
-  })
-  }
 
+  })
+
+
+  }
 
 
 }

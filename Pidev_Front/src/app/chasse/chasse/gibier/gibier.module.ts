@@ -9,7 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { AddGibierComponent } from './add-gibier/add-gibier.component';
 import { UpdateGibierComponent } from './update-gibier/update-gibier.component';
 import { DetailGibierComponent } from './detail-gibier/detail-gibier.component';
-
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { DetailGibierComponent } from './detail-gibier/detail-gibier.component';
     CommonModule,
     GibierRoutingModule,
     ChienChasseRoutingModule,
-    FormsModule,HttpClientModule
+    FormsModule, HttpClientModule, NgxPaginationModule
   ]
 })
 export class GibierModule { }

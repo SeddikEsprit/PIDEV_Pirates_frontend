@@ -8,12 +8,22 @@ import {ServiceGibierService} from "../service/service-gibier.service";
 })
 export class GibierComponent implements OnInit {
 gibier:any
+  p:number=1
+  limit:number=3
+  total!:number
   constructor(private serviceGibier:ServiceGibierService) { }
 
   ngOnInit(): void {
-  this.serviceGibier.getEspeceChasse().subscribe((data)=>{
-    this.gibier=data
-  })
+  this.getGibier(this.p)
   }
+  getGibier(p:number){
+    this.serviceGibier.getEspeceChasse(p,this.limit).subscribe((data)=>{
+      this.gibier=data
+    })
+  } getPage(p: number) {
+    this.p = p;
+    this.getGibier(this.p);
+  }
+
 
 }

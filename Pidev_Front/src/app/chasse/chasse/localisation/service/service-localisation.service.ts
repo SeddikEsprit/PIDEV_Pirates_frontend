@@ -8,8 +8,11 @@ export class ServiceLocalisationService {
 
   constructor(private http:HttpClient) { }
 
-  getLocalisation(){
-    return this.http.get( 'http://localhost:3000/localisationChasse')
+  getLocalisation(p:any,limit:any){
+    return this.http.get( 'http://localhost:3000/localisationChasse/?page='+p+'&limit='+limit)
+  }
+  getAllLocalisation(){
+    return this.http.get( 'http://localhost:3000/localisationChasse/all')
   }
   postLocalisation(localisation:any){
     return this.http.post('http://localhost:3000/localisationChasse/',localisation)
@@ -28,5 +31,9 @@ export class ServiceLocalisationService {
   }
   postNewEpeceByLocalisation(localisation:any,espece:any){
    return this.http.post( 'http://localhost:3000/localisationEspece/'+localisation+'/'+espece,null)
+  }
+  getDistance(lng:any,lat:any){
+    return this.http.get('http://localhost:3000/localisationChasse/'+lng+'/'+lat)
+
   }
 }

@@ -2,7 +2,6 @@
 
   <form #f="ngForm"  (ngSubmit)="updateCommentaire(f)">
 
-    <!-- lastName validation start here -->
     <div class="form-group">
       <label >Date Publication</label>
       <input type="text" class="form-control" placeholder="{{commentaire.date_publication}}" required name="date_publication" #date_publication="ngModel"  ngModel>

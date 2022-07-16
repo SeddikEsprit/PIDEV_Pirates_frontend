@@ -27,7 +27,7 @@ id:any
     this.serviceLocalisation.getEspecesByLocation(this.id).subscribe((data)=>{
       this.especes=data
     })
-    this.serviceGibier.getEspeceChasse().subscribe((data2)=>{
+    this.serviceGibier.getAllEspeceChasse().subscribe((data2)=>{
       this.gibier=data2
     })
   }
@@ -46,5 +46,8 @@ delete(id:any){
       this.router.navigate(['/chasse/localisation'])
     })
     this.router.navigate(['/chasse/localisation'])
+  }
+  getMap(lng:any,lat:any){
+    this.router.navigate(['/chasse/localisation/mapLocation/'+lng+'/'+lat])
   }
 }

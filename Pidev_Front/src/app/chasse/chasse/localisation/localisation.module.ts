@@ -10,7 +10,8 @@ import { AddLocalisationComponent } from './add-localisation/add-localisation.co
 import { UpdateLocalisationComponent } from './update-localisation/update-localisation.component';
 import { DetailLocalisationComponent } from './detail-localisation/detail-localisation.component';
 import { MapLocationComponent } from './map-location/map-location.component';
-
+import { DistancesComponent } from './distances/distances.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -18,13 +19,14 @@ import { MapLocationComponent } from './map-location/map-location.component';
     AddLocalisationComponent,
     UpdateLocalisationComponent,
     DetailLocalisationComponent,
-    MapLocationComponent
+    MapLocationComponent,
+    DistancesComponent
   ],
   imports: [
     CommonModule,
     LocalisationRoutingModule,
     ChienChasseRoutingModule,
-    FormsModule,HttpClientModule
+    FormsModule, HttpClientModule, NgxPaginationModule
   ]
 })
 export class LocalisationModule { }

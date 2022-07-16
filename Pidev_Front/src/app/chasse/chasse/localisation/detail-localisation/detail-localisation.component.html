@@ -6,7 +6,7 @@
       <div class="2">
         <div class="thumbnail">
           <p><strong>Localisation</strong></p>
-          <p>Localisation</p>
+          <button class="btn  btn-outline-primary btn-lg " (click)="getMap([localisation.longitude],[localisation.latitude])">VIEW ON MAP</button>
         </div>
       </div>
       <div class="col-sm-4">
@@ -54,11 +54,12 @@
 
   </div>
 
-</div>
+</div >
+<div class="container">
 <form #f="ngForm" (ngSubmit)="addNewEspeces(f)">
 <!--  <label for="browser">Choose your browser from the list:</label>-->
   <select class="form-select" aria-label="Default select example" name="espece" #espece="ngModel"  ngModel>
-    <option selected>Open this select menu</option>
+    <option selected >Open this select menu</option>
     <option *ngFor="let g of gibier" value="{{g.nomEspece}}">{{g.nomEspece}}</option>
 
   </select>
@@ -71,3 +72,4 @@
   <button class="btn btn-warning">ajouter une nouvelle espece</button>
 </form>
 
+</div>

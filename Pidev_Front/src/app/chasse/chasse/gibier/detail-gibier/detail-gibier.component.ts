@@ -24,7 +24,7 @@ id:any
     this.serviceGibier.getLocationByEspece(this.id).subscribe((data)=>{
       this.localisation=data
     })
-    this.serviceLocalisation.getLocalisation().subscribe((data)=>{
+    this.serviceLocalisation.getAllLocalisation().subscribe((data)=>{
       this.localisationAll=data
     })
   }

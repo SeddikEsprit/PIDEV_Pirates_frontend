@@ -1,10 +1,13 @@
 <div class="jumbotron text-center">
-  <a routerLink="/chasse/localisation/addLocalisation"> ajouter une nouvelle localisation</a>
+  <button class="btn  btn-outline-primary btn-lg " routerLink="/chasse/localisation/addLocalisation" >
+    AJOUTER UNE NOUVELLE LOCALISATION</button>
+
 
 </div>
 
 <div id="portfolio" class="container-fluid text-center bg-grey">
-  <div *ngFor="let localisation of localisation">
+  <button class="btn  btn-outline-primary btn-lg " (click)="getDistance()">LES LOCALISATIONS LES PLUS PROCHES DE MOI</button>
+  <div *ngFor="let localisation of localisation[0].results | paginate:{itemsPerPage:limit,currentPage:p,totalItems:localisation[0].total}">
     <h2>{{localisation.nom}}</h2><br>
     <h4>{{localisation.description}}</h4>
 
@@ -18,6 +21,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="pagination pagination-sm m-0 float-right">
+    <pagination-controls (pageChange)="getPage($event)"></pagination-controls>
   </div>
 </div><br>
 

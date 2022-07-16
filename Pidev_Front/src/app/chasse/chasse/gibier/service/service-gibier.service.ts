@@ -8,8 +8,11 @@ export class ServiceGibierService {
 
   constructor(private http:HttpClient) { }
 
-  getEspeceChasse(){
-    return this.http.get( 'http://localhost:3000/especeChasse')
+  getEspeceChasse(p:any,limit:any){
+    return this.http.get( 'http://localhost:3000/especeChasse/?page='+p+'&limit='+limit)
+  }
+  getAllEspeceChasse(){
+    return this.http.get( 'http://localhost:3000/especeChasse/all')
   }
   postEspeceChasse(especeChasse:any){
     return this.http.post('http://localhost:3000/especeChasse/',especeChasse)
