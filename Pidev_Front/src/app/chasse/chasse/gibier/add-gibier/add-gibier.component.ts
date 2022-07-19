@@ -15,7 +15,7 @@ export class AddGibierComponent implements OnInit {
   }
   addGibier(f:any){
     this.serviceGibier.postEspeceChasse(f.value).subscribe(()=>{
-      this.router.navigate(['/chasse/gibier'])
+      this.router.navigate(['/admin/chasse/gibier'])
     })
   }
 

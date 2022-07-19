@@ -29,6 +29,9 @@ export class ServiceLocalisationService {
   getEspecesByLocation(id:any){
     return this.http.get('http://localhost:3000/localisationEspece/especes/'+id)
   }
+  getLocationNumber(){
+    return this.http.get('http://localhost:3000/localisationEspece/chart/')
+  }
   postNewEpeceByLocalisation(localisation:any,espece:any){
    return this.http.post( 'http://localhost:3000/localisationEspece/'+localisation+'/'+espece,null)
   }
@@ -36,4 +39,5 @@ export class ServiceLocalisationService {
     return this.http.get('http://localhost:3000/localisationChasse/'+lng+'/'+lat)
 
   }
+
 }

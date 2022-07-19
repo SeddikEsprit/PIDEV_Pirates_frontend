@@ -20,7 +20,7 @@ id:any
   }
   updateGibier(f:any){
   return this.serviceGibier.updateEspeceChasse(this.id,f.value).subscribe(()=>{
-    this.router.navigate(['/chasse/gibier'])
+    this.router.navigate(['/admin/chasse/gibier'])
   })
   }
 
