@@ -1,0 +1,24 @@
+
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <button class="btn  btn-outline-primary btn-lg " (click)="getDistance()">LES LOCALISATIONS LES PLUS PROCHES DE MOI</button>
+  <div *ngFor="let localisation of localisation[0].results | paginate:{itemsPerPage:limit,currentPage:p,totalItems:localisation[0].total}">
+    <h2>{{localisation.nom}}</h2><br>
+    <h4>{{localisation.description}}</h4>
+
+    <div class="row text-center slideanim">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <a routerLink="/chasse/localisation/detailLocalisation/{{localisation._id}}">
+            <p><strong>Localisation</strong></p>
+            <p>Localisation</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pagination pagination-sm m-0 float-right">
+    <pagination-controls (pageChange)="getPage($event)"></pagination-controls>
+  </div>
+</div><br>
+
+
