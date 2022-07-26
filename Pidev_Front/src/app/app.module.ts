@@ -13,6 +13,7 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout/admin-layout.c
 import { UserLayoutComponent } from './user-layout/user-layout/user-layout.component';
 import { DashbordAdminComponent } from './dashbord-admin/dashbord-admin/dashbord-admin.component';
 import {DashbordAdminModule} from "./dashbord-admin/dashbord-admin.module";
+import {UserModule} from "./user/user.module";
 
 
 @NgModule({
@@ -25,11 +26,13 @@ import {DashbordAdminModule} from "./dashbord-admin/dashbord-admin.module";
     UserLayoutComponent,
     DashbordAdminComponent,
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ChienChasseRoutingModule,
+    UserModule,
     FormsModule,
     HttpClientModule,DashbordAdminModule
   ],

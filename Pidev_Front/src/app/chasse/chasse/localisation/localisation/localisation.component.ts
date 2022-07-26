@@ -38,6 +38,7 @@ localisation:any
     this.serviceLocalisation.getLocalisation(p,this.limit).subscribe((data)=>{
       this.localisation= data
       console.log(data)
+
     })
   }
   getPage(p: number) {
