@@ -1,7 +1,7 @@
 
 
 <div class="jumbotron text-center">
-  <a routerLink="/chasse/chienChasse/addChien"> ajouter un nouveau chien de chasse</a>
+  <a class="btn-outline-primary" routerLink="/admin/chasse/chienChasse/addChien"> <h2>ajouter un nouveau chien de chasse</h2></a>
 
 </div>
 
@@ -12,7 +12,7 @@
   <div class="row text-center slideanim">
     <div class="col-sm-4">
       <div class="thumbnail">
-        <a routerLink="/chasse/chienChasse/detailChien/{{chien._id}}">
+        <a routerLink="/admin/chasse/chienChasse/detailChien/{{chien._id}}">
           <img src="{{chien.photo}}" alt="Paris" width="400" height="300">
           <p><strong>Paris</strong></p>
           <p>Yes, we built Paris</p>

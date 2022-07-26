@@ -5,11 +5,15 @@ import {HomeComponent} from "./home/home.component";
 import {AdminLayoutComponent} from "./admin-layout/admin-layout/admin-layout.component";
 import {DashbordAdminComponent} from "./dashbord-admin/dashbord-admin/dashbord-admin.component";
 import {UserLayoutComponent} from "./user-layout/user-layout/user-layout.component";
+import {LoginComponent} from "./user-layout/login/login.component";
 
 const routes: Routes = [
   {path:'',component:UserLayoutComponent,children:[
       {path: '',component: HomeComponent},
       {path: 'chasse',loadChildren:()=>import('./user-layout/chasse/chasse.module').then(m=>m.ChasseModule)},
+      {path: 'login',loadChildren:()=>import('./user-layout/login/login.module').then(m=>m.LoginModule)},
+      {path: 'register',loadChildren:()=>import('./user-layout/register/register.module').then(m=>m.RegisterModule)},
+
     ]},
   {path:'admin',component:AdminLayoutComponent,children:[
     {path:'',component:DashbordAdminComponent},

@@ -23,6 +23,7 @@ export class DetailGibierComponent implements OnInit {
     })
     this.serviceGibier.getLocationByEspece(this.id).subscribe((data)=>{
       this.localisation=data
+      console.log(data)
     })
     this.serviceLocalisation.getAllLocalisation().subscribe((data)=>{
       this.localisationAll=data
